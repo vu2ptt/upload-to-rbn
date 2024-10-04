@@ -1,12 +1,18 @@
 /* A small utility for transfering decodes from
-   Pavel Demin's muilti-band FT8 receiver for the
+   Pavel Demin's multi-band FT8 receiver for the
    Red Pitaya 125-14 and 122-16 to RBN Aggregator
    for upload to the Reverse Beacon Network.
    Uses a pruned version of the WSJT-X UDP broadcast
    protocol because RBN Aggregator ignores many fields
    in the datagrams.
    By Björn Ekelund SM7IUN - March 2019
-   Updated January 2021 */
+   Updated January 2021 
+   
+   Mod - by Prasad Rajagopal VU2PTT 
+   Updated October 2024
+   for QMTECH xc7020 SDR by Pavel Demin
+   Also added Rx on 7056, 10131, 18095, 24911, 50323
+   */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -169,10 +175,18 @@ int main(int argc, char *argv[]) {
         case  5358:
         case  5359:
         case  5360: bfreq =  5357000; break;
+        case  7056:
+        case  7057:
+        case  7058:
+        case  7059: bfreq =  7056000; break;
         case  7074:
         case  7075:
         case  7076:
         case  7077: bfreq =  7074000; break;
+        case 10131:
+        case 10132:
+        case 10133:
+        case 10134: bfreq = 10131000; break;
         case 10136:
         case 10137:
         case 10138:
@@ -181,6 +195,10 @@ int main(int argc, char *argv[]) {
         case 14075:
         case 14076:
         case 14077: bfreq = 14074000; break;
+        case 18095: 
+        case 18096:
+        case 18097:
+        case 18098: bfreq = 18095000; break;
         case 18100: 
         case 18101:
         case 18102:
@@ -189,6 +207,10 @@ int main(int argc, char *argv[]) {
         case 21075:
         case 21076:
         case 21077: bfreq = 21074000; break;
+        case 24911:
+        case 24912:
+        case 24913:
+        case 24914: bfreq = 24911000; break;
         case 24915:
         case 24916:
         case 24917:
@@ -201,6 +223,10 @@ int main(int argc, char *argv[]) {
         case 50314:
         case 50315:
         case 50316: bfreq = 50313000; break;
+        case 50323:
+        case 50324:
+        case 50325:
+        case 50326: bfreq = 50323000; break;
         default:   bfreq = 1000 * (int)((freq - 200)/ 1000);
       } // Switch
 
