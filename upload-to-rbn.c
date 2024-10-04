@@ -19,7 +19,7 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 
-const char ID[] = "STEMlab FT8 RX 1.0";
+const char ID[] = "QMTECH FT8 RX 1.0";
 
 int32_t read_int(char **pointer, int32_t *value) {
   char *start = *pointer;
